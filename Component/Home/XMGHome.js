@@ -1,6 +1,8 @@
 import React from 'react'
-import { StyleSheet, View, Text, TextInput, Image, TouchableOpacity, Dimensions, Alert, Platform } from 'react-native'
+import { StyleSheet, View, Text, TextInput, Image, TouchableOpacity, Dimensions, Alert, Platform, ScrollView } from 'react-native'
 let { width, height } = Dimensions.get('window')
+import TopView from './XMGTopView'
+
 export default class XMGHome extends React.Component{
     render(){
         return (
@@ -8,9 +10,11 @@ export default class XMGHome extends React.Component{
                 {/* 设置首页导航条 */}
                 {this.renderNavBar()}
 
-                <TouchableOpacity onPress={()=>this.props.navigation.navigate('XMGHomeDetail')}>
-                    <Text>home</Text>
-                </TouchableOpacity>
+                <ScrollView>
+                    <View>
+                        <TopView/>
+                    </View>
+                </ScrollView>
                 
             </View>
         )
